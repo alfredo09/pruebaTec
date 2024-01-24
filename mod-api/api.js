@@ -38,6 +38,8 @@ api.use(async (req, res, next) => {
   }
 });
 
+/// DEPARTAMENTO /////////////////////////////////////////////////////////////////////
+
 // Ruta para agregar un nuevo departamento
 api.post('/addDepartamento', async (req, res, next) => {
   const params = req.body;
@@ -90,7 +92,7 @@ api.post('/findByIdDepartamento', async (req, res, next) => {
 })
 
 api.get('/findAllDepartamento', async (req, res, next) => {
-  //buscamos y devolvemos a todas las salas
+  //buscamos y devolvemos a todos los departamentos
   const obj = await Departamento.findAll()
   res.send(obj)
 })
@@ -152,7 +154,7 @@ api.delete('/deleteDepartamento', async (req, res, next) => {
 
 api.put('/updateEmpleado', async (req, res, next) => {
   const params = req.body
-  //editamos un usuario atraves de su id
+  //editamos un empleado atraves de su id
   let obj
   try {
     obj = await Empleado.update(params.id, {
