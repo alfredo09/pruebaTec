@@ -1,19 +1,21 @@
-'use strict'
+'use strict';
 
-const Sequelize = require('sequelize')
-const setupDatabase = require('../lib/db')
+const Sequelize = require('sequelize');
+const setupDatabase = require('../lib/db');
 
-module.exports = function setupDepartamentoModel (config) {
-  const sequelize = setupDatabase(config)
+module.exports = function setupDepartamentoModel(config) {
+  const sequelize = setupDatabase(config);
 
   return sequelize.define('departamento', {
     nombreDepartamento: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     descripcion: {
       type: Sequelize.STRING,
-      allowNull: true
-    }
-  })
-}
+      allowNull: true,
+    },
+  }, {
+    freezeTableName: true, // Agrega esta línea para evitar la pluralización del nombre de la tabla
+  });
+};

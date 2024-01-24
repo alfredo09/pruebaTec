@@ -1,40 +1,41 @@
-'use strict'
+'use strict';
 
-const Sequelize = require('sequelize')
-const setupDatabase = require('../lib/db')
+const Sequelize = require('sequelize');
+const setupDatabase = require('../lib/db');
 
-module.exports = function setupEmpleadoModel (config) {
-  const sequelize = setupDatabase(config)
+module.exports = function setupEmpleadoModel(config) {
+  const sequelize = setupDatabase(config);
 
   return sequelize.define('empleado', {
     nombre: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     apPaterno: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     apMaterno: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     direccion: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     telefono: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     correo: {
       type: Sequelize.STRING,
-      allowNull: true
+      allowNull: true,
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: true
-    }
-
-  })
-}
+      allowNull: true,
+    },
+  }, {
+    freezeTableName: true, // Agrega esta línea para evitar la pluralización del nombre de la tabla
+  });
+};
