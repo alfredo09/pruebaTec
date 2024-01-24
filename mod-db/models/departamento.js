@@ -16,6 +16,6 @@ module.exports = function setupDepartamentoModel(config) {
       allowNull: true,
     },
   }, {
-    freezeTableName: true, // Agrega esta línea para evitar la pluralización del nombre de la tabla
+    freezeTableName: true, 
   });
 };

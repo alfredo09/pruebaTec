@@ -9,7 +9,7 @@ module.exports = function setupEmpleado(EmpleadoModel, DepartamentoModel) {
     });
 
     if (res) {
-      Object.assign(obj, { DepartamentoId: res.id });
+      Object.assign(obj, { departamentoId: res.id });
       const result = await EmpleadoModel.create(obj);
       return result.toJSON();
     }
