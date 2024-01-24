@@ -14,10 +14,6 @@ module.exports = function setupDepartamentoModel (config) {
     descripcion: {
       type: Sequelize.STRING,
       allowNull: true
-    },
-    switch: {
-      type: Sequelize.STRING,
-      allowNull: true
     }
   })
 }

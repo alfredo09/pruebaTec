@@ -1,13 +1,10 @@
 "use strict";
 
 const debug = require("debug")("mod:db:setup");
-//const inquirer = require("inquirer");
-//const chalk = require("chalk");
 const minimist = require("minimist");
 const db = require("./");
 
 const args = minimist(process.argv);
-//const prompt = inquirer.createPromptModule();
 
 async function setup() {
   const config = {
@@ -27,7 +24,6 @@ async function setup() {
 }
 
 function handleFatalError(err) {
-  //console.error(`${chalk.red("[fatal error]")} ${err.message}`);
   console.error(err.stack);
   process.exit(1);
 }

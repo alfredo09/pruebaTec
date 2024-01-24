@@ -5,8 +5,6 @@ const setupDatabase = require("./lib/db");
 const setupEmpleado = require("./lib/empleado");
 const setupDepartamento = require("./lib/departamento");
 
-//const defaults = require("defaults");
-
 const setupEmpleadoModel = require("./models/empleado");
 const setupDepartamentoModel = require("./models/departamento");
 
@@ -34,7 +32,7 @@ module.exports = async function (config) {
   await sequelize.authenticate();
 
   if (config.setup) {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ alter: true });
   }
 
   const Empleado = setupEmpleado(EmpleadoModel, DepartamentoModel);
