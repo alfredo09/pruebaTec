@@ -1,10 +1,7 @@
 "use strict";
 
 const debug = require("debug")("mod:db:setup");
-const minimist = require("minimist");
 const db = require("./");
-
-const args = minimist(process.argv);
 
 async function setup() {
   const config = {
@@ -24,6 +21,7 @@ async function setup() {
 }
 
 function handleFatalError(err) {
+  console.error(err.message)
   console.error(err.stack);
   process.exit(1);
 }

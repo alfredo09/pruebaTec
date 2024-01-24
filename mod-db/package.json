@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "NODE_ENV=production node setup.js",
+    "dev": "DEBUG=mod:* node setup.js"
   },
   "keywords": [],
   "author": "",

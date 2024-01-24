@@ -9,18 +9,6 @@ const setupEmpleadoModel = require("./models/empleado");
 const setupDepartamentoModel = require("./models/departamento");
 
 module.exports = async function (config) {
-  config = {
-    dialect: "sqlite",
-    pool: {
-      max: 10,
-      min: 0,
-      idle: 10000,
-    },
-    query: {
-      raw: true,
-    },
-  };
-
   const sequelize = setupDatabase(config);
 
   const EmpleadoModel = setupEmpleadoModel(config);
@@ -32,7 +20,7 @@ module.exports = async function (config) {
   await sequelize.authenticate();
 
   if (config.setup) {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: true })
   }
 
   const Empleado = setupEmpleado(EmpleadoModel, DepartamentoModel);
