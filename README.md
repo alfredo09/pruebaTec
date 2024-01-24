@@ -37,7 +37,7 @@ A continuacion se detallan algunos aspectos del desarrollo de la prueba tecnica.
     ```bash
     node server.js
 
-3. Levantar la aplicacion esta corriendo en:
+3. La aplicacion esta corriendo en:
     
     ```bash
     http://localhost:3000/api/...
